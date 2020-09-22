@@ -79,10 +79,10 @@ header section{
 
 /* The headline is our text */
 .headline{
-    position: absolute; /* This ensures that the text is not affected by the opacity layer, therefore making it pop out */
+    position: absolute;
     top: 70%;
     left: 15%;
-    z-index: 30;
+    z-index: 3; /* This ensures that the text is not affected by the opacity layer, therefore making it pop out */
     transform: translate(-20%, -70%);
     font-size: 50px;
 }
