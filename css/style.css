@@ -7,3 +7,82 @@
 --red-pigment: hsla(0, 89%, 54%, 1);
 
 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* This styling is for the background color*/
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, hsla(340, 10%, 24%, 1), hsla(220, 5%, 11%, 1));
+    z-index: -1;
+}
+
+/* Creating a navigation using grid */
+nav{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%; /* this gives the grid 4 columns and the 10% on the ends act as margins */
+    height: 10vh;
+    align-items: center;
+}
+
+/* Now we'll move the logo 1 spot to the right */
+#logo{
+    grid-column: 2/3; /* This moves it after the second column line, meaning it'll be between the 2nd & 3rd column */
+    font-size: 24px;
+}
+
+.fa-bars{
+    justify-self: flex-end; /* This moves the burger menu to the end row of the grid */
+    font-size: 24px;
+}
+
+/* The header section contains the div holding the image and welcome message */
+header section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* The hero class is the one which holds the image and welcome message */
+.hero{
+    height: 60%;
+    width: 100%;
+    position: relative; /* This allows our hero div not to be blacked out after we add the opacity layer */
+}
+
+/* This is what creates a dimmer image */
+.hero::after{
+    content: "";
+    background-color: black;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is how to make the image look not stretched */
+}
+
+/* The headline is our text */
+.headline{
+    position: absolute; /* This ensures that the text is not affected by the opacity layer, therefore making it pop out */
+    top: 70%;
+    left: 15%;
+    z-index: 30;
+    transform: translate(-20%, -70%);
+    font-size: 50px;
+}
